@@ -1,9 +1,10 @@
 .ExpHeader{
-  display: inline-block;
+  display: block;
   flex: 1;
   border: 2px solid green;
   margin: 15px;
   width: 450px;
+  overflow: auto;
 }
 .ExperimentGenerator{
   display: inline-block;
@@ -26,14 +27,29 @@
   margin-left: 11.3%;
 }
 .ExpScreen{
-  display:block;
   border: 2px solid blue;
-  width: 700px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  width: 1000px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  overflow: auto;
 }
 .ExpExpectedValue,
 .ExpVariance{
   border: 2px solid blue;
   display: block;
+  overflow: auto;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+.ExpMainBody{
+  flex:1;
+}
+.ExpSideBody{
+  width: 400px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.ExpBody{
+  display: flex;
+  position:relative;
 }

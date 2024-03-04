@@ -1,4 +1,3 @@
-import { Center } from "@chakra-ui/react";
 import Experiment from "./Experiment/Experiment";
 
 function App() {

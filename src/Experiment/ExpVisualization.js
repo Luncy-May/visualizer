@@ -3,9 +3,11 @@ import ItemRow from './ItemRow'
 const ExpVisualization = ({prompt,theory, notation, pvalue,nvalue, expectedvalue, variance}) => {
   let ItemsTotal = []
   for (let random = 0; random < nvalue / 5; random++){
+    console.log("random: "+ random)
     let ItemsRow = []
     for (let day = 0; day < 5; day++){
         const num = random * 5 + day 
+        if (num > nvalue-1){break;}
         let individualItem = {
         id: num,
         color: "red",
