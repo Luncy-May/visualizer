@@ -3,7 +3,7 @@ import React from 'react'
 const GenerateButton = ({onClick}) => {
   return (
     <div>
-      <button onClick={onClick}>Generate</button>
+      <button className='GenerateButton' onClick={onClick}>Generate</button>
     </div>
   )
 }

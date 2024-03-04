@@ -2,11 +2,12 @@ import React from 'react'
 import ExpVisualization from './ExpVisualization'
 import ExpVariance from './ExpVariance'
 import ExpExpectedValue from './ExpExpectedValue'
-const ExpBody = ({prompt,theory, notation, pvalue,nvalue, expectedvalue, variance}) => {
+const ExpBody = ({prompt,theory, notation, pvalue,nvalue, expectedvalue, variance, ItemsTotal, onClick}) => {
   return (
     <div className='ExpBody'>
       <div className='ExpMainBody'>
-      <h2 style ={{color: 'black', fontWeight: 'bold', marginLeft:'60px', display:'inline-block'}}>Experiment Visualization</h2>
+      <h2 style ={{color: 'black', fontWeight: 'bold', textAlign:'center', marginLeft:'95px', display:'inline-block'}}>Experiment Visualization</h2>
+      <div className='ExpVisualization'>
       <ExpVisualization
           prompt = {prompt}
           theory = {theory}
@@ -15,7 +16,10 @@ const ExpBody = ({prompt,theory, notation, pvalue,nvalue, expectedvalue, varianc
           nvalue = {nvalue}
           expectedvalue={expectedvalue}
           variance={variance}
+          ItemsTotal = {ItemsTotal}
+          onClick = {onClick}
       />
+      </div>
       </div>
      <div className='ExpSideBody'>
      <ExpExpectedValue

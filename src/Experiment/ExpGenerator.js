@@ -47,6 +47,7 @@ const ExpGenerator = ({ addDistribution }) => {
           id="prompt" 
           placeholder="Enter prompt/question" 
           value={prompt} 
+          required
           onChange={(e) => setPrompt(e.target.value)} 
         />
         <br></br>
@@ -55,8 +56,8 @@ const ExpGenerator = ({ addDistribution }) => {
           id="theory" 
           value={theory} 
           onChange={handleTheoryChange}
+          required
         >
-          <option value="">Select Theory</option>
           <option value="Bernoulli Distribution">Bernoulli Distribution</option>
           <option value="Geometric Distribution">Geometric Distribution</option>
           <option value="Negative Binomial Distribution">Negative Binomial Distribution</option>
@@ -68,6 +69,7 @@ const ExpGenerator = ({ addDistribution }) => {
           id="notation" 
           placeholder="Enter notation" 
           value={notation} 
+          required
           onChange={(e) => setNotation(e.target.value)} 
         />
         <br></br>
@@ -77,6 +79,7 @@ const ExpGenerator = ({ addDistribution }) => {
           id="pvalue" 
           placeholder="Enter value of p" 
           value={pvalue} 
+          required
           onChange={(e) => setPvalue(e.target.value)} 
         />
         <br></br>
@@ -86,10 +89,11 @@ const ExpGenerator = ({ addDistribution }) => {
           id="nvalue" 
           placeholder="Enter value of n" 
           value={nvalue} 
+          required
           onChange={(e) => setNvalue(e.target.value)} 
         />
         <br></br>
-        <button type="submit">Create Distribution</button><br></br>
+        <button type="submit">Create An Experiment</button><br></br>
       </form>
     </div>
   );

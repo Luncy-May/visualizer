@@ -5,7 +5,7 @@ import ExpGenerator from './ExpGenerator'
 const Experiment = () => {
   const [distributions, setDistributions] = useState([
     new Distribution({
-      prompt: "noasdft",
+      prompt: "Toss a fair coin once. Find the probability of getting a head",
       theory: "Bernoulli Distribution",
       notation: "Bern",
       pvalue: 0.5,
@@ -14,7 +14,7 @@ const Experiment = () => {
       variance: 0.25,
     }),
     new Distribution({
-      prompt: "nooo",
+      prompt: "You have 0.15 chance of getting a head when you toss an unfair coin. Find the probability of first getting a head in 8 tries",
       theory: "Geometric Distribution",
       notation: "Geo",
       pvalue: 0.15,
@@ -23,13 +23,22 @@ const Experiment = () => {
       variance: (0.85/(0.15*0.15)).toFixed(2),
     }),
     new Distribution({
-      prompt: "nSDFDSFSF",
+      prompt: "Toss a fair coin 17 times.",
       theory: "Binominal Distribution",
       notation: "Bern",
-      pvalue: 0.4,
+      pvalue: 0.5,
       nvalue: 17,
       expectedvalue: 6,
       variance: 3.6,
+    }),
+    new Distribution({
+      prompt: "Toss an unfair coin 100 times.",
+      theory: "Binominal Distribution",
+      notation: "Bern",
+      pvalue: 0.67,
+      nvalue: 100,
+      expectedvalue: 67,
+      variance: ((67)*(1-0.67)).toFixed(2),
     }),
   ])
   const addDistribution = (newDistribution) => {
