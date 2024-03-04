@@ -9,7 +9,7 @@ const ExpVariance = ({prompt,theory, notation, pvalue,nvalue, expectedvalue, var
             if (num > variance - 1){break}
             let individualItem = {
             id: num,
-            color: "red",
+            color: "rgb(103, 103, 223)",
             shape: "square",
             }
             ItemsRow.push(individualItem)

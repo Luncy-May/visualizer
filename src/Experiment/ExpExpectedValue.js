@@ -9,7 +9,7 @@ const ExpExpectedValue = ({prompt,theory, notation, pvalue,nvalue, expectedvalue
             if (num > expectedvalue-1){break}
             let individualItem = {
             id: num,
-            color: "red",
+            color: "rgb(37, 172, 123)",
             shape: "square",
             }
             ItemsRow.push(individualItem)

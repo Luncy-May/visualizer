@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Distribution from '../components/Distribution';
+import Distribution from '../components/Distribution'; // Import the CSS file
+
 const ExpGenerator = ({ addDistribution }) => {
   const [prompt, setPrompt] = useState('');
   const [theory, setTheory] = useState('');
@@ -30,13 +31,15 @@ const ExpGenerator = ({ addDistribution }) => {
     setNvalue('');
     setPrompt('');
   };
+
   const handleTheoryChange = (event) => {
     setTheory(event.target.value);
   };
+
   return (
-    <div>
-      <form onSubmit={handleSubmit} className='ExperimentGenerator'>
-        <label htmlFor="prompt">Prompt:</label>
+    <div className='ExpGenerator'>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="prompt">Prompt:</label><br></br>
         <textarea 
           type="text" 
           rows="5"
@@ -47,15 +50,19 @@ const ExpGenerator = ({ addDistribution }) => {
           onChange={(e) => setPrompt(e.target.value)} 
         />
         <br></br>
-        <label htmlFor="theory">Theory:</label>
-        <select id="theory" value={theory} onChange={handleTheoryChange}>
+        <label htmlFor="theory">Theory:</label><br></br>
+        <select 
+          id="theory" 
+          value={theory} 
+          onChange={handleTheoryChange}
+        >
           <option value="">Select Theory</option>
           <option value="Bernoulli Distribution">Bernoulli Distribution</option>
           <option value="Geometric Distribution">Geometric Distribution</option>
           <option value="Negative Binomial Distribution">Negative Binomial Distribution</option>
         </select>
         <br></br>
-        <label htmlFor="notation">Notation:</label>
+        <label htmlFor="notation">Notation:</label><br></br>
         <input 
           type="text" 
           id="notation" 
@@ -64,7 +71,7 @@ const ExpGenerator = ({ addDistribution }) => {
           onChange={(e) => setNotation(e.target.value)} 
         />
         <br></br>
-        <label htmlFor="pvalue">Value of p:</label>
+        <label htmlFor="pvalue">Value of p:</label><br></br>
         <input 
           type="number" 
           id="pvalue" 
@@ -73,7 +80,7 @@ const ExpGenerator = ({ addDistribution }) => {
           onChange={(e) => setPvalue(e.target.value)} 
         />
         <br></br>
-        <label htmlFor="nvalue">Value of n:</label>
+        <label htmlFor="nvalue">Value of n:</label><br></br>
         <input 
           type="number" 
           id="nvalue" 
@@ -82,7 +89,7 @@ const ExpGenerator = ({ addDistribution }) => {
           onChange={(e) => setNvalue(e.target.value)} 
         />
         <br></br>
-        <button type="submit">Create Distribution</button>
+        <button type="submit">Create Distribution</button><br></br>
       </form>
     </div>
   );

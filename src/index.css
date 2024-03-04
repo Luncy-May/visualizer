@@ -1,14 +1,11 @@
 .ExpHeader{
   display: block;
-  flex: 1;
   border: 2px solid green;
   margin: 15px;
-  width: 450px;
-  overflow: auto;
-}
-.ExperimentGenerator{
-  display: inline-block;
-  border: 2px solid green;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
 }
 .Item{
   font-family: 'Poppins';
@@ -28,14 +25,19 @@
 }
 .ExpScreen{
   border: 2px solid blue;
+  background-color: #f0f0f0;
   width: 1000px;
   margin-top: 50px;
   margin-bottom: 50px;
   overflow: auto;
+  background-color: '#f0f0f0'; 
+  padding: '20px';
+  border-radius: '5px'; 
+  box-shadow: '0px 0px 5px 0px rgba(0,0,0,0.3)' 
 }
 .ExpExpectedValue,
 .ExpVariance{
-  border: 2px solid blue;
+  border: 2px solid rgb(103, 103, 223);
   display: block;
   overflow: auto;
   margin-bottom: 10px;
@@ -43,13 +45,55 @@
 }
 .ExpMainBody{
   flex:1;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  margin-right: 90px;
 }
 .ExpSideBody{
   width: 400px;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 .ExpBody{
   display: flex;
   position:relative;
+  margin-bottom: 20px;
+}
+/* ExpGenerator.css */
+
+.ExpGenerator {
+  font-family: Arial;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+}
+
+.ExpGenerator form {
+  display: flex;
+  flex-direction: column;
+}
+
+.ExpGenerator label {
+  font-weight: bold;
+}
+
+.ExpGenerator textarea,
+.ExpGenerator input,
+.ExpGenerator select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.ExpGenerator button {
+  width: 100%;
+  padding: 8px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }

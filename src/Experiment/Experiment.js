@@ -40,7 +40,7 @@ const Experiment = () => {
   //   theory))
   // }
   return (
-    <div>
+    <div className='ExperimentContainer'>
     <ExpGenerator addDistribution={addDistribution}/>
       {distributions.map(
         (distribution) => (

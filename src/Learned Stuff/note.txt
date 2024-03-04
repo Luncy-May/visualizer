@@ -131,3 +131,40 @@ The value attribute is an empty string, indicating that this option has no value
 This represents an option in the dropdown for selecting the "Bernoulli Distribution".
 The value attribute is set to "Bernoulli Distribution", which will be stored in the theory state variable when selected.
 Similarly, there are <option> elements for "Geometric Distribution" and "Negative Binomial Distribution".
+
+
+More complex use map() =>(), useState
+    const [ItemsTotal, setItemsTotal] = useState(generateItemsTotal());
+
+    // Function to generate initial ItemsTotal
+    function generateItemsTotal() {
+        const newItemsTotal = [];
+        for (let random = 0; random < nvalue / 5; random++) {
+        let ItemsRow = [];
+        for (let day = 0; day < 5; day++) {
+            const num = random * 5 + day;
+            if (num >= nvalue) break;
+            const success = Math.random() <= pvalue ? 1 : 0;
+            let individualItem = {
+            id: num,
+            color: "red",
+            shape: "square",
+            success: success,
+            };
+            ItemsRow.push(individualItem);
+        }
+        newItemsTotal.push(ItemsRow);
+        }
+        return newItemsTotal;
+    }
+
+    // Function to regenerate random success values
+    const handleRegenerate = () => {
+        const regeneratedItemsTotal = ItemsTotal.map((ItemsRow) =>
+        ItemsRow.map((individualItem) => ({
+            ...individualItem,
+            success: Math.random() <= pvalue ? 1 : 0,
+        }))
+        );
+        setItemsTotal(regeneratedItemsTotal);
+    };

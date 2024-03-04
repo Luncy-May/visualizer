@@ -7,7 +7,9 @@ const ItemRow = ({ItemRow}) => {
         <Item 
         id = {Itemm.id}
         color = {Itemm.color}
+        colorPercent={0.5}
         shape = {Itemm.shape}
+        success= {Itemm.success}
          />
         ))}
     </div>
