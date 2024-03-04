@@ -1,5 +1,39 @@
 .ExpHeader{
   display: inline-block;
-  border: 2px solid blue;
   flex: 1;
+  border: 2px solid green;
+  margin: 15px;
+  width: 450px;
+}
+.ExperimentGenerator{
+  display: inline-block;
+  border: 2px solid green;
+}
+.Item{
+  font-family: 'Poppins';
+  display:inline-block;
+  padding: 20px 25px;
+  margin: auto;
+  font-family: inherit;
+  border: 1px solid black;
+  font-size: 24px;
+  text-align: center; /* Center the text horizontally */
+  flex: 1;
+  box-sizing: border-box;
+}
+.ItemRow{
+  display: block;
+  margin-left: 11.3%;
+}
+.ExpScreen{
+  display:block;
+  border: 2px solid blue;
+  width: 700px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.ExpExpectedValue,
+.ExpVariance{
+  border: 2px solid blue;
+  display: block;
 }

@@ -1,20 +1,26 @@
 import React from 'react'
 import ExpBody from './ExpBody'
 import ExpHeader from './ExpHeader'
-const ExpScreen = ({theory, notation, pvalue,nvalue}) => {
+const ExpScreen = ({prompt,theory, notation, pvalue,nvalue, expectedvalue, variance}) => {
   return (
-    <div>
-      <ExpBody 
-        theory = {theory}
-        notation = {notation}
-        pvalue = {pvalue}
-        nvalue = {nvalue}
-      />
+    <div className='ExpScreen'>
       <ExpHeader 
+        prompt = {prompt}
         theory = {theory}
         notation = {notation}
         pvalue = {pvalue}
         nvalue = {nvalue}
+        expectedvalue={expectedvalue}
+        variance={variance}
+      />
+      <ExpBody 
+        prompt = {prompt}
+        theory = {theory}
+        notation = {notation}
+        pvalue = {pvalue}
+        nvalue = {nvalue}
+        expectedvalue={expectedvalue}
+        variance={variance}
       />
     </div>
   )

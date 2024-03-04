@@ -1,0 +1,133 @@
+How to Create a class:
+    Example: Distribution.js
+
+    import PropTypes from 'prop-types'
+    class Distribution {
+    constructor(props) {
+        this.theory = props.theory;
+        this.notation = props.notation;
+        this.pvalue = props.pvalue;
+        this.nvalue = props.nvalue;
+    }
+    }
+
+    Distribution.propTypes = {
+    theory: PropTypes.string.isRequired,
+    notation: PropTypes.string.isRequired,
+    pvalue: PropTypes.number.isRequired,
+    nvalue: PropTypes.number.isRequired,
+    }
+    export default Distribution
+
+
+
+useState, user input, select, option:
+    import React, { useState } from 'react';
+    import Distribution from '../components/Distribution';
+    const ExpGenerator = ({ addDistribution }) => {
+    const [prompt, setPrompt] = useState('');
+    const [theory, setTheory] = useState('');
+    const [notation, setNotation] = useState('');
+    const [pvalue, setPvalue] = useState('');
+    const [nvalue, setNvalue] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        // Create a new Distribution class instance with input values
+        const newDistribution = new Distribution({
+        prompt: prompt,
+        theory: theory,
+        notation: notation,
+        pvalue: parseFloat(pvalue),
+        nvalue: parseInt(nvalue)
+        });
+
+        // Add the new distribution to the list of generated distributions
+        addDistribution(newDistribution);
+
+        // Clear the form fields after submission
+        setTheory('');
+        setNotation('');
+        setPvalue('');
+        setNvalue('');
+        setPrompt('');
+    };
+    const handleTheoryChange = (event) => {
+        setTheory(event.target.value);
+    };
+    return (
+        <div>
+        <form onSubmit={handleSubmit} className='createExperiment'>
+            <label htmlFor="prompt">Prompt:</label>
+            <textarea 
+            type="text" 
+            rows="5"
+            cols="20"
+            id="prompt" 
+            placeholder="Enter prompt/question" 
+            value={prompt} 
+            onChange={(e) => setPrompt(e.target.value)} 
+            />
+            <br></br>
+            <label htmlFor="theory">Theory:</label>
+            <select id="theory" value={theory} onChange={handleTheoryChange}>
+            <option value="">Select Theory</option>
+            <option value="Bernoulli Distribution">Bernoulli Distribution</option>
+            <option value="Geometric Distribution">Geometric Distribution</option>
+            <option value="Negative Binomial Distribution">Negative Binomial Distribution</option>
+            </select>
+            <br></br>
+            <label htmlFor="notation">Notation:</label>
+            <input 
+            type="text" 
+            id="notation" 
+            placeholder="Enter notation" 
+            value={notation} 
+            onChange={(e) => setNotation(e.target.value)} 
+            />
+            <br></br>
+            <label htmlFor="pvalue">Value of p:</label>
+            <input 
+            type="number" 
+            id="pvalue" 
+            placeholder="Enter value of p" 
+            value={pvalue} 
+            onChange={(e) => setPvalue(e.target.value)} 
+            />
+            <br></br>
+            <label htmlFor="nvalue">Value of n:</label>
+            <input 
+            type="number" 
+            id="nvalue" 
+            placeholder="Enter value of n" 
+            value={nvalue} 
+            onChange={(e) => setNvalue(e.target.value)} 
+            />
+            <br></br>
+            <button type="submit">Create Distribution</button>
+        </form>
+        </div>
+    );
+    };
+
+    export default ExpGenerator;
+
+<label htmlFor="theory">Theory:</label>:
+
+This creates a label for the <select> element. The htmlFor attribute is used to associate the label with the form control. In this case, it associates the label with the <select> element with the id of "theory".
+<select id="theory" value={theory} onChange={handleTheoryChange}>:
+
+This creates a <select> element for choosing a theory.
+id="theory": This assigns an id to the <select> element. It is used to associate the label with the form control.
+value={theory}: This binds the value of the <select> element to the theory state variable. This ensures that the selected value is controlled by React and reflects the value stored in the state.
+onChange={handleTheoryChange}: This sets up an event listener for when the value of the <select> element changes. It triggers the handleTheoryChange function, allowing you to update the state (theory) with the selected value.
+<option value="">Select Theory</option>:
+
+This represents the default option in the dropdown, prompting the user to select a theory.
+The value attribute is an empty string, indicating that this option has no value associated with it. When selected, it won't change the theory state variable.
+<option value="Bernoulli Distribution">Bernoulli Distribution</option>:
+
+This represents an option in the dropdown for selecting the "Bernoulli Distribution".
+The value attribute is set to "Bernoulli Distribution", which will be stored in the theory state variable when selected.
+Similarly, there are <option> elements for "Geometric Distribution" and "Negative Binomial Distribution".

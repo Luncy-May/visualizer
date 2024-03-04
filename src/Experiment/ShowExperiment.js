@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Notation = () => {
+const ShowExperiment = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Notation = () => {
   )
 }
 
-export default Notation
+export default ShowExperiment

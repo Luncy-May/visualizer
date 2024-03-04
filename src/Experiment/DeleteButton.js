@@ -1,11 +1,11 @@
 import React from 'react'
 
-const P = ({pvalue}) => {
+const DeleteButton = () => {
   return (
     <div>
-      <p>{pvalue}</p>
+      
     </div>
   )
 }
 
-export default P
+export default DeleteButton

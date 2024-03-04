@@ -1,10 +1,13 @@
+import React from 'react'
 import PropTypes from 'prop-types'
-class Item {
-  constructor([props]){
-    this.color = props.color;
-    this.shape = props.shape;
-  }
+const Item = ({id, color, shape}) => {
+  return (
+    <div className='Item'>
+      ?
+    </div>
+  )
 }
+
 Item.propTypes = {
   color: PropTypes.string,
   shape: PropTypes.string,
