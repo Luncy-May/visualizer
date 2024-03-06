@@ -5,7 +5,7 @@ import Result from '../Result/Result'
 import RecordButton from './RecordButton'
 const ExpScreen = ({prompt,theory, notation, pvalue,nvalue, expectedvalue, variance}) => {
   const [ItemsTotal, setItemsTotal] = useState(generateItemsTotal());
-  const [experimentName, setExperimentName] = useState('nah')
+  const [experimentName, setExperimentName] = useState('no name entered')
   const [newName,setNewName] = useState('')
   const handleSubmit = (event) =>{
     event.preventDefault();
@@ -32,7 +32,7 @@ const ExpScreen = ({prompt,theory, notation, pvalue,nvalue, expectedvalue, varia
     }
     return newItemsTotal;
   }
-
+  
   // Function to regenerate random success values
   const handleRegenerate = () => {
     const regeneratedItemsTotal = ItemsTotal.map((ItemsRow) =>

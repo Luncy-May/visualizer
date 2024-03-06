@@ -11,29 +11,35 @@ class Distribution {
     this.pvalue = props.pvalue;
     this.nvalue = props.nvalue;
     this.rvalue = 10000000; 
-    this.expectedvalue = props.expectedvalue;
-    this.variance = props.variance;
+    this.expectedvalue = this.setExpectedValue();
+    this.variance = this.setVariance();
   }
   setExpectedValue = () => {
-    if (this.theory === "Bernoulli Distribution"){
-      this.expectedvalue = this.pvalue.toFixed(2);
-    }else if(this.theory === "Binomial Distribution"){
-      this.expectedvalue = (this.nvalue * this.pvalue).toFixed(2);
-    }else if(this.theory === "Geometric Distribution"){
-      this.expectedvalue = (1/this.pvalue).toFixed(2);
-    }else if(this.theory === "Negative Binomial Distribution"){
-      this.expectedvalue = (this.rvalue * this.pvalue).toFixed(2);
+    switch (this.theory) {
+      case "Bernoulli Distribution":
+        return this.pvalue.toFixed(2);
+      case "Binomial Distribution":
+        return (this.nvalue * this.pvalue).toFixed(2);
+      case "Geometric Distribution":
+        return (1 / this.pvalue).toFixed(2);
+      case "Negative Binomial Distribution":
+        return (this.rvalue * this.pvalue).toFixed(2);
+      default:
+        return 0;
     }
   }
   setVariance = () => {
-    if (this.theory === "Bernoulli Distribution"){
-      this.variance = (this.pvalue * (1-this.pvalue)).toFixed(2);
-    }else if(this.theory === "Binomial Distribution"){
-      this.varianec = (this.nvalue * this.pvalue * (1-this.pvalue)).toFixed(2);
-    }else if(this.theory === "Geometric Distribution"){
-      this.variance = ((1-this.pvalue)/(this.pvalue*this.pvalue)).toFixed(2);
-    }else if(this.theory === "Negative Binomial Distribution"){
-      this.variance = ((this.rvalue * (1-this.pvalue)) /(this.pvalue*this.pvalue)).toFixed(2);
+    switch (this.theory) {
+      case "Bernoulli Distribution":
+        return (this.pvalue * (1 - this.pvalue)).toFixed(2);
+      case "Binomial Distribution":
+        return (this.nvalue * this.pvalue * (1 - this.pvalue)).toFixed(2);
+      case "Geometric Distribution":
+        return ((1 - this.pvalue) / (this.pvalue * this.pvalue)).toFixed(2);
+      case "Negative Binomial Distribution":
+        return ((this.rvalue * (1 - this.pvalue)) / (this.pvalue * this.pvalue)).toFixed(2);
+      default:
+        return 0;
     }
   }
 }

@@ -10,20 +10,14 @@ const ExpGenerator = ({ addDistribution }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // Create a new Distribution class instance with input values
     const newDistribution = new Distribution({
       prompt: prompt,
       theory: theory,
       notation: notation,
       pvalue: parseFloat(pvalue),
-      nvalue: parseInt(nvalue)
+      nvalue: parseInt(nvalue),
     });
-    newDistribution.setExpectedValue()
-    newDistribution.setVariance()
-    // Add the new distribution to the list of generated distributions
     addDistribution(newDistribution);
-
     // Clear the form fields after submission
     setTheory('');
     setNotation('');
@@ -58,9 +52,10 @@ const ExpGenerator = ({ addDistribution }) => {
           onChange={handleTheoryChange}
           required
         >
+          <option value="">Select Theory</option>
           <option value="Bernoulli Distribution">Bernoulli Distribution</option>
           <option value="Geometric Distribution">Geometric Distribution</option>
-          <option value="Negative Binomial Distribution">Negative Binomial Distribution</option>
+          <option value="Binomial Distribution">Binomial Distribution</option>
         </select>
         <br></br>
         <label htmlFor="notation">Notation:</label><br></br>
